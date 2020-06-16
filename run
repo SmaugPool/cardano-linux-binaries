@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cd "$(dirname $0)"
+
+bin/cardano-node run \
+	--database-path db/ \
+	--socket-path socket \
+	--port 3000 \
+	--config etc/ff-config.json \
+	--topology etc/ff-topology.json

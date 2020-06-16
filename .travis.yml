@@ -1,0 +1,32 @@
+language: minimal
+services: docker
+if: tag IS present
+
+env:
+  global:
+    - ASSET=cardano.tar.gz
+
+before_install:
+  - docker build -t cardano .
+  - mkdir -p bin
+  - docker cp $(docker create cardano):/usr/local/bin/cardano-node bin/
+  - docker cp $(docker create cardano):/usr/local/bin/cardano-cli bin/
+  - sha1sum bin/*
+  - tar zcf cardano.tar.gz bin etc run LICENSE
+
+deploy:
+  provider: releases
+  api_key:
+    secure: h+0wXV6tw10IuN8OZCnVOI76LRj09CE+szZnRUGZ+nPCQRawjcnYLSaYQ6It5vqCulsWujHv/vtq03zArbaMrpLzqieIxm7G1UDddopx7Gyxs0weOw78Akydc62ub/oR5REzdBXplqxAZ2vCwON1wPVbS3bjRsVQg5mKM4th+3ZVDXj3kpisj3dudMTo9PVHTYuFH/4XZnjhxCwOFtwTO67IUGsAh89KbySvmVOdVomm1BlDKFkJ05CEEMn1J5y5/n7V/dTN8GmvRcaF1bDLNUzgmUY9TfaXcMoLAPFBgQChXytNtFJpEtCA3+ShPy1tDkCugm660O8+0DLJfDuPxHRPCmC1yY09G/HPK72LEq9l1NVw1TkwH0pxMw6QF+FzXeabfpEPUYCZArRY5Z1W8Bs1Yl4KUOAZQrB40ncL3Nht/eBOKXxDTt/oVhaOREuEjYLa24spbTArjrW3ZXEKsQeEZHTfwmFWACdf1BxGI2wPLs8jXl1+WTHBZyPmVSnQD6sfduolhl/um/X297ZggfKrVG5R7oSiUZmXEHLIqUwHqytuvM3MyWD/aWuYpQ1irL6P8dSYPe6WwmsRQj4Yxzkahz9TNDHmRecSQm0OTW/8nxU0CQiPRUgxPBhinWB3P0hZIoFWINwtPJk1xg+hTv/u2utmz41l8aOamXJKsFI=
+  file: $ASSET
+  skip_cleanup: true
+  on:
+    branch: master
+    tags: true
+
+notifications:
+  email:
+    recipients:
+      - smaug@smaug.group
+    on_success: change
+    on_failure: change
