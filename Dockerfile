@@ -2,7 +2,7 @@
 FROM alpine:3.11
 
 # Cardano release tag
-ARG tag=1.13.0
+ARG tag=1.13.0-rewards
 
 # Install required packages
 RUN apk add --no-cache git ghc cabal wget musl-dev zlib-dev zlib-static ncurses-dev ncurses-static
