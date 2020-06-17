@@ -42,8 +42,8 @@
   ],
   "defaultScribes": [
     [
-      "StdoutSK",
-      "stdout"
+      "FileSK",
+      "logs/node.log"
     ]
   ],
   "hasEKG": 12788,
@@ -157,8 +157,8 @@
   "setupScribes": [
     {
       "scFormat": "ScText",
-      "scKind": "StdoutSK",
-      "scName": "stdout",
+      "scKind": "FileSK",
+      "scName": "logs/node.log",
       "scRotation": null
     }
   ]
