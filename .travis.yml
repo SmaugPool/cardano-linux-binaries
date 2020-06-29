@@ -27,6 +27,6 @@ deploy:
 notifications:
   email:
     recipients:
-      - smaug@smaug.group
+      - smaug@pool.pm
     on_success: change
     on_failure: change
