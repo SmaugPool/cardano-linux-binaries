@@ -1,12 +1,15 @@
 {
   "ApplicationName": "cardano-sl",
   "ApplicationVersion": 0,
-  "GenesisFile": "shelley_testnet-genesis.json",
+  "ByronGenesisFile": "mainnet_candidate-byron-genesis.json",
   "LastKnownBlockVersion-Alt": 0,
-  "LastKnownBlockVersion-Major": 0,
+  "LastKnownBlockVersion-Major": 2,
   "LastKnownBlockVersion-Minor": 0,
-  "Protocol": "TPraos",
-  "RequiresNetworkMagic": "RequiresMagic",
+  "MaxKnownMajorProtocolVersion": 2,
+  "PBftSignatureThreshold": 0.9,
+  "Protocol": "Cardano",
+  "RequiresNetworkMagic": "RequiresNoMagic",
+  "ShelleyGenesisFile": "mainnet_candidate-shelley-genesis.json",
   "TraceBlockFetchClient": false,
   "TraceBlockFetchDecisions": true,
   "TraceBlockFetchProtocol": false,
@@ -51,7 +54,7 @@
     "127.0.0.1",
     12798
   ],
-  "minSeverity": "Debug",
+  "minSeverity": "Info",
   "options": {
     "mapBackends": {
       "cardano.node-metrics": [
@@ -156,7 +159,7 @@
   ],
   "setupScribes": [
     {
-      "scFormat": "ScText",
+      "scFormat": "ScJson",
       "scKind": "FileSK",
       "scName": "logs/node.log",
       "scRotation": null
