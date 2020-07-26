@@ -6,5 +6,5 @@ bin/cardano-node run \
 	--database-path db/ \
 	--socket-path socket \
 	--port 3000 \
-	--config etc/mainnet_candidate_3-config.json \
-	--topology etc/mainnet_candidate_3-topology.json
+	--config etc/mainnet_candidate_4-config.json \
+	--topology etc/mainnet_candidate_4-topology.json

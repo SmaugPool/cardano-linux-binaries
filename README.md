@@ -40,7 +40,6 @@ source <(bin/cardano-cli --bash-completion-script cardano-cli)
 ```
 
 ## Notes
-* `LiveView` and logs are enabled by default in the node config.
 * `cardano-node` is currently built without specific `systemd` support.
 * Binaries are built and released automatically by a Travis-CI job on new tags.
 Check the tag Travis-CI log to verify the build and the binaries SHA1 computed
