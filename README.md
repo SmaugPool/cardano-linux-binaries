@@ -27,7 +27,7 @@ See [Releases](https://github.com/smaug-group/cardano-linux-binaries/releases) f
 The node will run on port 3001.
 
 For more information, see
-[Shelley Testnet](https://testnets.cardano.org/en/shelley/get-started/configuring-a-node-using-yaml/),  [Links](https://testnets.cardano.org/en/shelley/resources/links/) and [Tutorials](https://github.com/input-output-hk/cardano-tutorials).
+[cardano-node documentation](https://docs.cardano.org/projects/cardano-node/en/latest/).
 
 ## Run CLI
 ```bash
