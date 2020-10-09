@@ -1,5 +1,5 @@
-# Use Alpine 3.11 with GHC 8.6.5
-FROM alpine:3.11
+# Use Alpine 3.11 with GHC 8.8.3
+FROM alpine:3.12
 
 # Cardano release tag or branch
 ARG tag=1.21.1
@@ -18,7 +18,7 @@ RUN apk add --no-cache elogind-dev
 RUN git clone -q -b tdammers/rebased-vrf --depth 1 https://github.com/input-output-hk/libsodium.git /libsodium
 WORKDIR /libsodium
 RUN git checkout 66f017f1
-RUN ./autogen.sh && ./configure --disable-dependency-tracking && make && make install
+RUN ./autogen.sh && ./configure --disable-dependency-tracking && make -j 2 && make install
 
 # Clone cardano-node
 RUN git clone -q -b $tag --depth 1 https://github.com/input-output-hk/cardano-node.git /cardano
