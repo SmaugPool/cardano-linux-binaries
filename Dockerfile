@@ -1,8 +1,8 @@
-# Use Alpine 3.11 with GHC 8.8.3
+# Use Alpine 3.12 with GHC 8.8.3
 FROM alpine:3.12
 
 # Cardano release tag or branch
-ARG tag=1.21.1
+ARG tag=1.23.0
 
 # Install required packages
 RUN apk add --no-cache git ghc cabal wget musl-dev zlib-dev zlib-static ncurses-dev ncurses-static
